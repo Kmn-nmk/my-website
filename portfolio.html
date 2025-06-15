@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinsley Nyakundi - Web Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS */
+        /* Section Themes */
+        .home-theme {
+            background: linear-gradient(135deg, #000000 0%, #FF8C00 100%);
+        }
+        .about-theme {
+            background: linear-gradient(135deg, #FF8C00 0%, #000000 100%);
+        }
+        .skills-theme {
+            background: linear-gradient(135deg, #000000 0%, #FF8C00 100%);
+        }
+        .projects-theme {
+            background: linear-gradient(135deg, #FF8C00 0%, #000000 100%);
+        }
+        .contact-theme {
+            background: linear-gradient(135deg, #000000 0%, #FF8C00 100%);
+        }
+        
+        /* Dark/Light Mode */
+        .dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .light-mode {
+            background-color: #ffffff;
+            color: #121212;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .modal {
+            transition: opacity 0.3s ease-in-out;
+        }
+        .payment-form {
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body class="font-sans bg-black">
+    <!-- Navigation -->
+    <nav class="bg-black text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold">Kinsley Nyakundi</a>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-blue-200 transition">Home</a>
+                <a href="#about" class="hover:text-blue-200 transition">About</a>
+                <a href="#skills" class="hover:text-blue-200 transition">Skills</a>
+                <a href="#projects" class="hover:text-blue-200 transition">Projects</a>
+                <a href="#certificates" class="hover:text-blue-200 transition">Certificates</a>
+                <a href="#contact" class="hover:text-blue-200 transition">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden gradient-bg px-4 pb-4">
+            <a href="#home" class="block py-2 hover:text-blue-200 transition">Home</a>
+            <a href="#about" class="block py-2 hover:text-blue-200 transition">About</a>
+            <a href="#skills" class="block py-2 hover:text-blue-200 transition">Skills</a>
+            <a href="#projects" class="block py-2 hover:text-blue-200 transition">Projects</a>
+            <a href="#certificates" class="block py-2 hover:text-blue-200 transition">Certificates</a>
+            <a href="#contact" class="block py-2 hover:text-blue-200 transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="home-theme text-white py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm Kinsley Nyakundi</h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6">Web Developer from Kisumu, Kenya</h2>
+                <p class="text-lg mb-8">Creating beautiful, functional websites that deliver results.</p>
+                <div class="flex space-x-4">
+                    <a href="#projects" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">View My Work</a>
+                    <a href="#contact" class="border-2 border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition">Contact Me</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-white overflow-hidden shadow-2xl">
+                    <!-- Placeholder for your photo -->
+                    <div class="w-full h-full bg-gray-300 flex items-center justify-center">
+                        <i class="fas fa-user text-6xl text-gray-500"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 about-theme text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-blue-500 shadow-lg">
+                        <!-- Another photo placeholder -->
+                        <div class="w-full h-full bg-gray-200 flex items-center justify-center">
+                            <i class="fas fa-user-tie text-5xl text-gray-500"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <h3 class="text-2xl font-semibold mb-4">Kinsley Nyakundi Manwa</h3>
+                    <p class="text-gray-700 mb-4">
+                        I'm a passionate web developer based in Kisumu, Kenya with a Diploma in ICT and certification in AI Essentials. 
+                        I specialize in creating responsive, user-friendly websites that help businesses establish their online presence.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        With expertise in modern web technologies, I build websites that are not only visually appealing but also 
+                        optimized for performance and search engines. My goal is to deliver solutions that meet client needs while 
+                        providing exceptional user experiences.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>
+                            <span>Kisumu, Kenya</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-blue-500 mr-2"></i>
+                            <span>+254 702 807 336</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-blue-500 mr-2"></i>
+                            <span>kinsley@example.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 skills-theme text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">My Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Skill Cards -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">HTML5</h3>
+                    <p class="text-gray-600">Semantic markup and modern structure</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">CSS3</h3>
+                    <p class="text-gray-600">Styling and responsive design</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">JavaScript</h3>
+                    <p class="text-gray-600">Interactive functionality</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">React</h3>
+                    <p class="text-gray-600">Frontend framework</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Node.js</h3>
+                    <p class="text-gray-600">Backend development</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">MongoDB</h3>
+                    <p class="text-gray-600">NoSQL database</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">AI Integration</h3>
+                    <p class="text-gray-600">Smart features</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Responsive Design</h3>
+                    <p class="text-gray-600">Mobile-friendly</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-20 bg-black text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">My Certificates</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Certificate 1 -->
+                <div class="certificate-card bg-orange-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+                    <div class="h-64 bg-black flex items-center justify-center p-4">
+                        <img src="https://via.placeholder.com/400x300" alt="Certificate" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Diploma in ICT</h3>
+                        <p class="text-orange-200 mb-4">Kisumu National Polytechnic</p>
+                        <button class="w-full bg-orange-600 text-white py-2 rounded font-semibold hover:bg-orange-700 transition">
+                            View Certificate
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="certificate-card bg-orange-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+                    <div class="h-64 bg-black flex items-center justify-center p-4">
+                        <img src="https://via.placeholder.com/400x300" alt="Certificate" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">AI Essentials</h3>
+                        <p class="text-orange-200 mb-4">Cisco Networking Academy</p>
+                        <button class="w-full bg-orange-600 text-white py-2 rounded font-semibold hover:bg-orange-700 transition">
+                            View Certificate
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Certificate 3 - HTML/CSS -->
+                <div class="certificate-card bg-orange-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+                    <div class="h-64 bg-black flex items-center justify-center p-4">
+                        <img src="https://via.placeholder.com/400x300" alt="Certificate" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">HTML5 & CSS3 Certification</h3>
+                        <p class="text-orange-200 mb-4">W3Schools</p>
+                        <button class="w-full bg-orange-600 text-white py-2 rounded font-semibold hover:bg-orange-700 transition">
+                            View Certificate
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Certificate 4 - JavaScript -->
+                <div class="certificate-card bg-orange-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+                    <div class="h-64 bg-black flex items-center justify-center p-4">
+                        <img src="https://via.placeholder.com/400x300" alt="Certificate" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">JavaScript Certification</h3>
+                        <p class="text-orange-200 mb-4">FreeCodeCamp</p>
+                        <button class="w-full bg-orange-600 text-white py-2 rounded font-semibold hover:bg-orange-700 transition">
+                            View Certificate
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Certificate 5 - React -->
+                <div class="certificate-card bg-orange-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+                    <div class="h-64 bg-black flex items-center justify-center p-4">
+                        <img src="https://via.placeholder.com/400x300" alt="Certificate" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">React Certification</h3>
+                        <p class="text-orange-200 mb-4">Meta (Coursera)</p>
+                        <button class="w-full bg-orange-600 text-white py-2 rounded font-semibold hover:bg-orange-700 transition">
+                            View Certificate
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Certificate 6 - Node.js -->
+                <div class="certificate-card bg-orange-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+                    <div class="h-64 bg-black flex items-center justify-center p-4">
+                        <img src="https://via.placeholder.com/400x300" alt="Certificate" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Node.js Certification</h3>
+                        <p class="text-orange-200 mb-4">Udemy</p>
+                        <button class="w-full bg-orange-600 text-white py-2 rounded font-semibold hover:bg-orange-700 transition">
+                            View Certificate
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Certificate 7 - MongoDB -->
+                <div class="certificate-card bg-orange-900 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+                    <div class="h-64 bg-black flex items-center justify-center p-4">
+                        <img src="https://via.placeholder.com/400x300" alt="Certificate" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">MongoDB Certification</h3>
+                        <p class="text-orange-200 mb-4">MongoDB University</p>
+                        <button class="w-full bg-orange-600 text-white py-2 rounded font-semibold hover:bg-orange-700 transition">
+                            View Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 projects-theme text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Weather App -->
+                <div class="project-card bg-orange-100 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-cloud-sun text-6xl text-blue-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Weather App</h3>
+                        <p class="text-gray-600 mb-4">Real-time weather information with 5-day forecast</p>
+                        <div class="flex justify-between items-center">
+                            <button onclick="openProjectModal('weather')" class="text-blue-500 hover:text-blue-700 font-medium">
+                                View Demo
+                            </button>
+                            <button onclick="openPaymentModal('weather')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                                Get Code ($20)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car Rental -->
+                <div class="project-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-car text-6xl text-green-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Car Rental Website</h3>
+                        <p class="text-gray-600 mb-4">Complete booking system for vehicle rentals</p>
+                        <div class="flex justify-between items-center">
+                            <button onclick="openProjectModal('car')" class="text-blue-500 hover:text-blue-700 font-medium">
+                                View Demo
+                            </button>
+                            <button onclick="openPaymentModal('car')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                                Get Code ($30)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel Website -->
+                <div class="project-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center">
+                        <i class="fas fa-hotel text-6xl text-purple-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Hotel Booking Website</h3>
+                        <p class="text-gray-600 mb-4">Room reservation system with admin panel</p>
+                        <div class="flex justify-between items-center">
+                            <button onclick="openProjectModal('hotel')" class="text-blue-500 hover:text-blue-700 font-medium">
+                                View Demo
+                            </button>
+                            <button onclick="openPaymentModal('hotel')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                                Get Code ($35)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fast Food -->
+                <div class="project-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-red-100 flex items-center justify-center">
+                        <i class="fas fa-hamburger text-6xl text-red-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Fast Food Restaurant</h3>
+                        <p class="text-gray-600 mb-4">Online food ordering with payment integration</p>
+                        <div class="flex justify-between items-center">
+                            <button onclick="openProjectModal('food')" class="text-blue-500 hover:text-blue-700 font-medium">
+                                View Demo
+                            </button>
+                            <button onclick="openPaymentModal('food')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                                Get Code ($25)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Boutique -->
+                <div class="project-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-pink-100 flex items-center justify-center">
+                        <i class="fas fa-tshirt text-6xl text-pink-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Boutique Website</h3>
+                        <p class="text-gray-600 mb-4">E-commerce platform for fashion items</p>
+                        <div class="flex justify-between items-center">
+                            <button onclick="openProjectModal('boutique')" class="text-blue-500 hover:text-blue-700 font-medium">
+                                View Demo
+                            </button>
+                            <button onclick="openPaymentModal('boutique')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                                Get Code ($40)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More Projects -->
+                <div class="project-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-yellow-100 flex items-center justify-center">
+                        <i class="fas fa-plus-circle text-6xl text-yellow-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">More Projects</h3>
+                        <p class="text-gray-600 mb-4">Check back soon for additional projects</p>
+                        <div class="flex justify-between items-center">
+                            <button class="text-blue-500 hover:text-blue-700 font-medium opacity-50 cursor-not-allowed">
+                                Coming Soon
+                            </button>
+                            <button class="bg-gray-300 text-gray-500 px-4 py-2 rounded cursor-not-allowed">
+                                Get Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 contact-theme text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-4">Contact Information</h3>
+                    <p class="text-gray-700 mb-6">
+                        Feel free to reach out for project inquiries, collaborations, or just to say hello!
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-blue-500 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold">Location</h4>
+                                <p class="text-gray-600">Kisumu, Kenya</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-phone text-blue-500 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold">Phone</h4>
+                                <p class="text-gray-600">+254 702 807 336</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-blue-500 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <p class="text-gray-600">kinsley@example.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="font-semibold mb-3">Connect with me</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-600 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center hover:bg-blue-800 transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 text-white flex items-center justify-center hover:bg-gray-900 transition">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-pink-600 text-white flex items-center justify-center hover:bg-pink-700 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <form class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-500 text-white py-3 rounded font-semibold hover:bg-blue-600 transition">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold">Kinsley Nyakundi</h3>
+                    <p class="text-blue-200">Web Developer & AI Specialist</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-blue-200 transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-blue-200 transition"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="hover:text-blue-200 transition"><i class="fab fa-github"></i></a>
+                    <a href="#" class="hover:text-blue-200 transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-blue-400 mt-6 pt-6 text-center text-blue-200">
+                <p>&copy; 2023 Kinsley Nyakundi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Demo Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden modal">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h3 id="modal-title" class="text-xl font-semibold">Project Demo</h3>
+                <button onclick="closeModal('project-modal')" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="modal-content" class="p-6">
+                <!-- Content will be loaded here -->
+            </div>
+            <div class="p-4 border-t flex justify-end">
+                <button onclick="closeModal('project-modal')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden modal">
+        <div class="bg-white rounded-lg max-w-md w-full">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h3 id="payment-title" class="text-xl font-semibold">Purchase Project Code</h3>
+                <button onclick="closeModal('payment-modal')" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <div class="payment-form">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2">Project</label>
+                        <input id="payment-project" type="text" class="w-full px-4 py-2 border border-gray-300 rounded bg-gray-100" readonly>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2">Price</label>
+                        <input id="payment-price" type="text" class="w-full px-4 py-2 border border-gray-300 rounded bg-gray-100" readonly>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2">Payment Method</label>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option>M-Pesa</option>
+                            <option>PayPal</option>
+                            <option>Credit Card</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2">Phone Number (for M-Pesa)</label>
+                        <input type="tel" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="+254...">
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 mb-2">Email Address</label>
+                        <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your@email.com">
+                    </div>
+                    <button onclick="processPayment()" class="w-full bg-green-500 text-white py-3 rounded font-semibold hover:bg-green-600 transition">
+                        Complete Payment
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden modal">
+        <div class="bg-white rounded-lg max-w-md w-full">
+            <div class="p-6 text-center">
+                <div class="text-green-500 text-5xl mb-4">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Payment Successful!</h3>
+                <p class="text-gray-600 mb-6">Thank you for your purchase. The project code will be sent to your email shortly.</p>
+                <button onclick="closeModal('success-modal')" class="bg-blue-500 text-white px-6 py-2 rounded font-semibold hover:bg-blue-600 transition">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Project demo modal
+        function openProjectModal(project) {
+            const modal = document.getElementById('project-modal');
+            const title = document.getElementById('modal-title');
+            const content = document.getElementById('modal-content');
+            
+            // Set title based on project
+            let projectTitle = '';
+            let projectDescription = '';
+            let projectFeatures = [];
+            
+            switch(project) {
+                case 'weather':
+                    projectTitle = 'Weather App';
+                    projectDescription = 'A responsive weather application that provides real-time weather data and 5-day forecasts for any location worldwide.';
+                    projectFeatures = [
+                        'Real-time weather data from API',
+                        '5-day forecast with icons',
+                        'Location search functionality',
+                        'Responsive design for all devices',
+                        'Temperature unit toggle (C/F)'
+                    ];
+                    break;
+                case 'car':
+                    projectTitle = 'Car Rental Website';
+                    projectDescription = 'A complete car rental platform with vehicle browsing, booking system, and admin dashboard.';
+                    projectFeatures = [
+                        'Vehicle catalog with filters',
+                        'Online booking system',
+                        'User accounts and profiles',
+                        'Admin dashboard for management',
+                        'Payment gateway integration'
+                    ];
+                    break;
+                case 'hotel':
+                    projectTitle = 'Hotel Booking Website';
+                    projectDescription = 'A hotel reservation system with room types, availability calendar, and online check-in.';
+                    projectFeatures = [
+                        'Room types and amenities display',
+                        'Availability calendar',
+                        'Online booking with confirmation',
+                        'Admin panel for reservations',
+                        'Customer reviews section'
+                    ];
+                    break;
+                case 'food':
+                    projectTitle = 'Fast Food Restaurant';
+                    projectDescription = 'An online food ordering platform with menu, cart functionality, and delivery tracking.';
+                    projectFeatures = [
+                        'Interactive menu with categories',
+                        'Shopping cart functionality',
+                        'Online payment integration',
+                        'Order tracking system',
+                        'Special offers and discounts'
+                    ];
+                    break;
+                case 'boutique':
+                    projectTitle = 'Boutique Website';
+                    projectDescription = 'An e-commerce platform for fashion items with product catalog, wishlist, and secure checkout.';
+                    projectFeatures = [
+                        'Product catalog with filters',
+                        'Wishlist functionality',
+                        'Shopping cart system',
+                        'Secure checkout process',
+                        'Customer account dashboard'
+                    ];
+                    break;
+            }
+            
+            title.textContent = projectTitle + ' Demo';
+            
+            // Create content HTML
+            let html = `
+                <div class="mb-6">
+                    <h4 class="text-lg font-semibold mb-2">Project Description</h4>
+                    <p class="text-gray-700">${projectDescription}</p>
+                </div>
+                <div class="mb-6">
+                    <h4 class="text-lg font-semibold mb-2">Key Features</h4>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                        ${projectFeatures.map(feature => `<li>${feature}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2">Project Preview</h4>
+                    <div class="h-64 bg-white border border-gray-300 rounded flex items-center justify-center">
+                        <p class="text-gray-500">Interactive demo would be displayed here</p>
+                    </div>
+                </div>
+            `;
+            
+            content.innerHTML = html;
+            modal.classList.remove('hidden');
+        }
+
+        // Payment modal
+        function openPaymentModal(project) {
+            const modal = document.getElementById('payment-modal');
+            const title = document.getElementById('payment-title');
+            const projectInput = document.getElementById('payment-project');
+            const priceInput = document.getElementById('payment-price');
+            
+            let projectTitle = '';
+            let price = '';
+            
+            switch(project) {
+                case 'weather':
+                    projectTitle = 'Weather App';
+                    price = '$20';
+                    break;
+                case 'car':
+                    projectTitle = 'Car Rental Website';
+                    price = '$30';
+                    break;
+                case 'hotel':
+                    projectTitle = 'Hotel Booking Website';
+                    price = '$35';
+                    break;
+                case 'food':
+                    projectTitle = 'Fast Food Restaurant';
+                    price = '$25';
+                    break;
+                case 'boutique':
+                    projectTitle = 'Boutique Website';
+                    price = '$40';
+                    break;
+            }
+            
+            title.textContent = `Purchase ${projectTitle} Code`;
+            projectInput.value = projectTitle;
+            priceInput.value = price;
+            
+            modal.classList.remove('hidden');
+        }
+
+        // Close modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        // Process payment (simulated)
+        function processPayment() {
+            closeModal('payment-modal');
+            setTimeout(() => {
+                document.getElementById('success-modal').classList.remove('hidden');
+            }, 300);
+        }
+
+        // Close success modal after 5 seconds
+        function autoCloseSuccessModal() {
+            setTimeout(() => {
+                closeModal('success-modal');
+            }, 5000);
+        }
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const body = document.body;
+
+        // Check for saved theme preference or use system preference
+        const currentTheme = localStorage.getItem('theme') || 
+                           (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
+        } else {
+            body.classList.add('light-mode');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.replace('dark-mode', 'light-mode');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.classList.replace('light-mode', 'dark-mode');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>
